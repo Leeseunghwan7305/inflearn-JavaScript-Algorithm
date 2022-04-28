@@ -1,5 +1,6 @@
 function solution(arr) {
-  let arr2 = Array.from(Array({ length: 7 }), () => 0);
+  const arr2 = new Array(5).fill(0).map(() => new Array(4));
+
   console.log(arr2);
 }
 
@@ -10,3 +11,4 @@ let arr = [
   [4, 3, 6, 4, 1],
   [8, 7, 3, 5, 2],
 ];
+console.log(solution(arr));
