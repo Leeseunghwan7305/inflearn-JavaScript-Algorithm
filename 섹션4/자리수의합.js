@@ -1,4 +1,5 @@
 function solution(n, arr) {
+  console.time("시작");
   let max = 0;
   let a = 0;
   let result = 0;
@@ -20,5 +21,6 @@ function solution(n, arr) {
   return result;
 }
 
-let arr = [128, 460, 603, 40, 521, 137, 123];
-console.log(solution(7, arr));
+let arr = [128, 460, 603, 40];
+console.log(solution(4, arr));
+console.timeEnd("시작");
