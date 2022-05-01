@@ -1,11 +1,26 @@
 function solution(arr1, arr2) {
   let newArr = [];
-  for (let i = 0; i < arr2.length; i++) {
-    if (arr1.includes(arr2[i])) {
-      newArr.push(arr2[i]);
+  arr1.sort((a, b) => a - b);
+  arr2.sort((a, b) => a - b);
+  let pL = 0;
+  let pR = 0;
+  console.log(arr1);
+  console.log(arr2);
+  while (pL < arr1.length && pR < arr2.length) {
+    if (arr1[pL] == arr2[pR]) {
+      newArr.push(arr1[pL]);
+      console.log(pL);
+      console.log(pR);
+      pL++;
+      pR++;
+    } else if (arr1[pL] < arr2[pR]) {
+      pL++;
+    } else {
+      pR++;
     }
   }
-  return newArr.sort((a, b) => a - b).join(" ");
+
+  return newArr;
 }
 
 let a = [1, 3, 9, 5, 2];
