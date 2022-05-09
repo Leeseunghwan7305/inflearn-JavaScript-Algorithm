@@ -14,7 +14,7 @@
 //   console.log(result);
 // }
 
-// let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+// let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13]
 
 function solution(arr) {
   for (let i = 0; i < arr.length; i++) {
