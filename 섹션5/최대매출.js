@@ -2,7 +2,7 @@ function solution(k, arr) {
   let pL = 0;
   let sum = 0;
   let max = 0;
-  for (pL = 0; pL < arr.length - k; pL++) {
+  for (pL = 0; pL < arr.length; pL++) {
     let pR = pL + k - 1;
     sum = 0;
     for (let i = pL; i <= pR; i++) {
