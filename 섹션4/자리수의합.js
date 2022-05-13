@@ -1,26 +1,23 @@
 function solution(n, arr) {
-  console.time("시작");
   let max = 0;
-  let a = 0;
-  let result = 0;
+  let a = 0; //자릿수의합
+  let result = 0; //자릿수의합이 가장크고 가장 큰값
   for (let x of arr) {
     a = x
       .toString()
       .split("")
-      .reduce((pre, cur) => pre / 1 + Number(cur));
+      .reduce((pre, cur) => pre + Number(cur), 0);
     if (max < a) {
       max = a;
       result = x;
     } else if (max == a) {
       if (result < x) {
         result = x;
-        max = a;
       }
     }
   }
   return result;
 }
 
-let arr = [128, 460, 603, 40];
-console.log(solution(4, arr));
-console.timeEnd("시작");
+let arr = [128, 460, 603, 40, 521, 137, 123];
+console.log(solution(7, arr));
