@@ -1,34 +1,17 @@
-function solution(m, arr) {
+function solution2(m, arr) {
   let pL = 0;
   let pR = 0;
-  let sum = 0;
-  let len = arr.length;
+  let max = 0;
+  let result = 0;
   let num = 0;
-  while (pL != arr.length && pR != arr.length) {
-    sum = 0;
-    for (let i = pL; i <= pR; i++) {
-      sum += arr[i];
+  for (let pR = 0; pR < ab.length; pR++) {
+    max += ab[pR];
+    while (max > m) {
+      max -= ab[pL++];
     }
-    console.log(sum);
-    if (sum <= 5) {
-      pR++;
-      num++;
-    } else {
-      pL++;
-    }
+    result += pR - pL + 1;
   }
-  while (pL <= arr.length) {
-    pL++;
-    if (sum <= 5) {
-      num++;
-    }
-  }
-  while (pR <= arr.length) {
-    pR++;
-    if (sum <= 5) num++;
-  }
-  console.log(num);
+  return result;
 }
-
-let a = [1, 3, 1, 2, 3];
-console.log(solution(5, a));
+let ab = [1, 3, 1, 2, 3];
+console.log(solution2(5, ab));
