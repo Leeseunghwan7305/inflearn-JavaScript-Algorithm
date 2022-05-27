@@ -3,10 +3,13 @@ function solution(s) {
   let result = [];
   for (let x of s) {
     if (x == "(") {
+      //(일경우
       stack.push(x);
     } else if (x == ")") {
+      //) 일경우
       stack.pop();
     } else if (stack.length == 0) {
+      // 문자일경우
       result.push(x);
     }
   }
