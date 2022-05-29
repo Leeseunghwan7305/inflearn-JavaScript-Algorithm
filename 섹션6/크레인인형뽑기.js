@@ -1,3 +1,4 @@
+let start = new Date();
 function solution(board, moves) {
   let stack = [];
   let result = 0;
@@ -30,3 +31,7 @@ let a = [
 
 let b = [1, 5, 3, 5, 1, 2, 1, 4];
 console.log(solution(a, b));
+
+let end = new Date(); // 측정 종료
+
+console.log(`반복문을 모두 도는데 ${end - start} 밀리초가 걸렸습니다.`);
