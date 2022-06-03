@@ -9,4 +9,5 @@ function solution(n) {
   }
   console.log(dp);
 }
+//var 함수스코프 let const 블록스코프
 console.log(solution(45));
