@@ -14,3 +14,15 @@ function solution(m, coin) {
 
 let arr = [1, 2, 5, 3, 8];
 console.log(solution(23, arr));
+
+function solution2(m, coin) {
+  let dy = Array.from({ length: 15 }, (v, i) => 0);
+  console.log(dy);
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = m; j >= arr[i]; j--) {}
+  }
+}
+
+let arr2 = [1, 2, 5, 3, 8];
+console.log(solution2(23, arr2));
