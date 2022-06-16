@@ -12,17 +12,17 @@ function solution(m, coin) {
   return result;
 }
 
-let arr = [1, 2, 5, 3, 8];
-console.log(solution(23, arr));
-
 function solution2(m, coin) {
-  let dy = Array.from({ length: 15 }, (v, i) => 0);
-  console.log(dy);
-
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = m; j >= arr[i]; j--) {}
+  let dy = Array.from({ length: m + 1 }, (v, i) => 1000);
+  dy[0] = 0;
+  for (let i = 0; i < coin.length; i++) {
+    for (let j = coin[i]; j <= m; j++) {
+      dy[j] = Math.min(dy[j], dy[j - coin[i]] + 1);
+    }
   }
+  answer = dy[m];
+  return answer;
 }
 
-let arr2 = [1, 2, 5, 3, 8];
-console.log(solution2(23, arr2));
+let arr2 = [1, 2, 5];
+console.log(solution2(15, arr2));
