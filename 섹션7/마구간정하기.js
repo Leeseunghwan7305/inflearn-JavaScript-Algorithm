@@ -1,20 +1,34 @@
-function count(stable, dist) {}
+function count(stable, dist) {
+  let current = stable[0];
+  let c = 1;
+  for (let i = 1; i < stable.length; i++) {
+    if (stable[i] - current >= dist) {
+      current = stable[i];
+      c++;
+    }
+  }
+  return c;
+}
 function solution(c, stable) {
   stable.sort((a, b) => a - b);
   console.log(stable);
-  let lt = 0;
-  let rt = stable.length - 1;
-  c = c - 2;
-  let arr = [];
-  for (let i = 0; i < c; i++) {
-    let mid = Math.floor((rt + lt) / 2);
-    arr.push(Math.abs(stable[mid] - stable[lt]));
-    arr.push(Math.abs(stable[mid] - stable[rt]));
+  let answer = 0;
+  //mid == 마구간 말 간의 최대 거리
+  let lt = stable[0];
+  let rt = stable[stable.length - 1];
+  console.log(lt, rt);
+  let mid = 0;
+  while (lt <= rt) {
+    mid = parseInt((lt + rt) / 2);
 
-    rt = mid;
-    lt = mid;
+    if (count(stable, mid) < c) {
+      rt = mid - 1;
+    } else {
+      answer = mid;
+      lt = mid + 1;
+    }
   }
-  return Math.min(...arr);
+  return answer;
 }
 
 let arr = [1, 2, 8, 4, 9];

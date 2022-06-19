@@ -1,5 +1,3 @@
-function count(songs, capacity) {}
-
 function solution(m, songs) {
   let memory = 0;
   let section = 0;
@@ -40,12 +38,24 @@ function count(songs, capacity) {
 }
 
 function solution2(m, songs) {
-  let answer;
+  //최소 메모리 구하기
   let lt = Math.max(...songs);
-  let rt = songs.reduce((a, b) => a + b, 0);
+  //최대 메모리 구하기
+  let rt = songs.reduce((cur, pre) => cur + pre, 0);
+  let answer = 0;
   while (lt <= rt) {
     let mid = parseInt((lt + rt) / 2);
-    if (count(songs, mid) <= m) {
+    let sum = 0;
+    let cnt = 1;
+    for (let i = 0; i < songs.length; i++) {
+      if (sum + songs[i] > mid) {
+        cnt++;
+        sum = songs[i];
+      } else {
+        sum += songs[i];
+      }
+    }
+    if (cnt <= m) {
       answer = mid;
       rt = mid - 1;
     } else {
@@ -55,5 +65,5 @@ function solution2(m, songs) {
   return answer;
 }
 
-let arr2 = [1, 2, 3, 4, 5, 6, 7, 8];
+let arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 console.log(solution2(3, arr2));
