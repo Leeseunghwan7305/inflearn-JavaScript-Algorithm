@@ -1,17 +1,18 @@
 function solution(n, m) {
+  // 3  배열 2개
   let ch = Array.from({ length: m }, () => 0);
-
   function DFS(L) {
     if (L == m) {
       console.log(ch);
       return;
-    }
-    for (let i = 1; i <= n; i++) {
-      ch[L] = i;
-      DFS(L + 1);
+    } else {
+      for (let i = 1; i <= n; i++) {
+        ch[L] = i;
+        DFS(L + 1);
+      }
     }
   }
-  console.log(DFS(0));
+  DFS(0);
 }
 
 console.log(solution(3, 2));
