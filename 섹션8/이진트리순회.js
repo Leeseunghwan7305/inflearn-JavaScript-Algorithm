@@ -8,5 +8,4 @@ function solution(n) {
   }
   console.log(DFS(n));
 }
-
 console.log(solution(1));
