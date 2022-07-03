@@ -4,7 +4,7 @@ function solution(n, m) {
   let answer = [];
   console.log(tmp);
   function DFS(L, S) {
-    if (L == m) {
+    if (L === m) {
       //answer.push(tmp.slice());
       console.log(tmp);
       //slice는 원본배열이 바뀌지 않는다.
